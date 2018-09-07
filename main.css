@@ -1,0 +1,22 @@
+body {
+    background-image: url("http://globalmedicalco.com/photos/globalmedicalco/5/23701.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* color: white;
+    font-family: "Montserrat"; */
+}
+
+* {
+    color: white;    
+    font-family: "Montserrat";    
+}
+
+h2 {
+    display: inline;
+}
+
+#start {
+    margin: 10px;
+}
