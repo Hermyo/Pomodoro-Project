@@ -7,7 +7,7 @@ $(document).ready(function () {
     $("#start").click(function () {
         var counter = setInterval(timer, 1000);
         count *= 60;
-
+        breakTime *=60;
         function timer() {
             //Hide variables
             $("#start, #minus5Clock, #add5Clock, #minus5Break, #add5Break, #breakNum, #title1, #title2").hide();
@@ -27,21 +27,23 @@ $(document).ready(function () {
             }
 
             function breakTimer() {
+                //Sets the time heading to break
                 $("#timeType").html("Break Time: ");
+                //Show the break time
                 $("#breakNum").show();
-                breakTime *= 60;
-                $("#timeType").show();
+                //Decrement break time seconds
                 breakTime -= 1;
                 if (breakTime === 0) {
                     clearInterval(startBreak);
-                    buzzer.play();
                     $("#reset").show();
-                    $("#breakNum, #breakType").hide();
+                    buzzer.play();
                 }
-                if (breakTime % 60 >= 10) {
-                    $("#breakNum").html(Math.floor(breakTime / 60) + ":" + breakTime % 60);
-                } else {
+                if (breakTime % 60 === 0) {
+                    $("#breakNum").html(Math.floor(breakTime / 60) + ":" + "00");
+                } else if (breakTime % 60 < 10) {
                     $("#breakNum").html(Math.floor(breakTime / 60) + ":" + "0" + breakTime % 60);
+                } else {
+                    $("#breakNum").html(Math.floor(breakTime / 60) + ":" + breakTime % 60);
                 }
             }
         }
@@ -50,7 +52,7 @@ $(document).ready(function () {
 
     $("#reset").click(function () {
         count = 25;
-        breakTime = 25;
+        breakTime = 5;
         $("#num").html(count);
         $("#breakNum").html(breakTime);
         $("#start, #minus5Clock, #add5Clock, #minus5Break, #add5Break, #breakNum, #num, #title1, #title2").show();
