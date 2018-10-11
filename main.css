@@ -1,5 +1,5 @@
 body {
-    background-image: url("http://globalmedicalco.com/photos/globalmedicalco/5/23701.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2016/03/23/12/53/clock-1274699_960_720.jpg");
     background-size: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@ body {
 }
 
 * {
-    color: #eff3f3;    
+    color: #AC935D;    
     font-family: "Montserrat";    
 }
 
